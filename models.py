@@ -8,34 +8,17 @@ class User:
         return {"id": self.id, "name": self.name, "email": self.email}
 
 
-class Project:
-    def __init__(self, id, title, owner_id):
-        self.id = id
-        self.title = title.strip()
-        self.owner_id = owner_id
-
-    def to_dict(self):
-        return {
-            "id": self.id,
-            "title": self.title,
-            "owner_id": self.owner_id
-        }
-
-
 class Task:
-    def __init__(self, id, title, project_id, status="open"):
+    def __init__(self, id, title, user_id, status="open"):
         self.id = id
         self.title = title.strip()
-        self.project_id = project_id
+        self.user_id = user_id
         self.status = status
 
-    def mark_complete(self):
-        self.status = "done"
-
     def to_dict(self):
         return {
             "id": self.id,
             "title": self.title,
-            "project_id": self.project_id,
-            "status": self.status
+            "user_id": self.user_id,
+            "status": self.status,
         }
