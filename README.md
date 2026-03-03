@@ -1,73 +1,68 @@
-# SimpleTracker CLI
+SimpleTracker CLI
 
 SimpleTracker CLI is a Python-based Command-Line Interface (CLI) application that allows administrators to manage users and their tasks.
 
 This project demonstrates Object-Oriented Programming (OOP), JSON file persistence, modular code structure, and CLI command handling using argparse.
 
----
+📌 Features
 
-## 📌 Features
+Create users (name + email)
 
-- Create users (name + email)
-- Assign tasks to users
-- View tasks for a specific user
-- Mark tasks as completed
-- Persistent data storage using JSON
-- Clean CLI output using the `rich` library
+Assign tasks to users
 
----
+View tasks for a specific user
 
-## 🏗 Project Structure
+Persistent data storage using JSON
+
+Clean CLI output using the rich library
+
+🏗 Project Structure
 simpletracker/
 │
-├── main.py # CLI entry point
-├── models.py # User and Task classes
-├── storage.py # JSON load/save logic
+├── main.py        # CLI entry point
+├── models.py      # User and Task classes
+├── storage.py     # JSON load/save logic
 ├── requirements.txt
-└── data.json # Auto-generated storage file
+└── data.json      # Auto-generated storage file
+🧠 Object-Oriented Design
+Classes
 
+User
 
----
+id
 
-## 🧠 Object-Oriented Design
+name
 
-### Classes:
+email
 
-- **User**
-  - id
-  - name
-  - email
+Task
 
-- **Task**
-  - id
-  - title
-  - user_id
-  - status (open / done)
+id
 
-### Relationship:
+title
+
+user_id
+
+Relationship
 
 One-to-Many:
 
-A single **User** can have multiple **Tasks**.
+A single User can have multiple Tasks.
 
----
+💾 Data Persistence
 
-## 💾 Data Persistence
-
-Data is stored locally in a `data.json` file using Python's built-in `json` module.
+Data is stored locally in a data.json file using Python’s built-in json module.
 
 The system automatically:
-- Creates the file if it does not exist
-- Loads data on startup
-- Saves changes after every modification
 
----
+Creates the file if it does not exist
 
-## ⚙️ Installation & Setup
+Loads data on startup
 
-### 1️⃣ Clone the Repository
+Saves changes after every modification
 
-```bash
+⚙️ Installation & Setup
+1️⃣ Clone the Repository
 git clone <your-repo-url>
 cd simpletracker
 2️⃣ Create Virtual Environment
@@ -82,8 +77,6 @@ Add a Task to a User
 python3 main.py add-task --user "Alex" --title "Finish summative lab"
 List Tasks for a User
 python3 main.py list-tasks --user "Alex"
-Mark Task as Complete
-python3 main.py complete-task --id 1
 🛠 Technologies Used
 
 Python 3.10+
